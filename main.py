@@ -1,6 +1,12 @@
-class Person:
-    name = 'Ivan'
-    age = 30
 
 
-print(Person.age)
+class Car:
+    model = 'BMW'
+    engine = 1.6
+
+    @staticmethod
+    def drive():
+        print('drive')
+
+
+Car.drive()
