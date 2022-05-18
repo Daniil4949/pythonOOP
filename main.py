@@ -1,12 +1,8 @@
+class Cat:
+    __shared_attr = {
+        'breed': 'pers',
+        'color': 'black'
+    }
 
-
-class Car:
-    model = 'BMW'
-    engine = 1.6
-
-    @staticmethod
-    def drive():
-        print('drive')
-
-
-Car.drive()
+    def __init__(self):
+        self.__dict__ = Cat.__shared_attr
