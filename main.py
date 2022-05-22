@@ -55,9 +55,51 @@ import math
 #     elif (k <= 0): return True
 #     else: return False
 
-import sympy
-def is_prime(x):
-    return sympy.isprime(x)
-print(sympy.isprime(4))
-#print(find_next_square(121))
+# import sympy
+# def is_prime(x):
+#     return sympy.isprime(x)
+# print(sympy.isprime(4))
+# #print(find_next_square(121))
 
+
+import string
+# import re
+#
+#
+# def is_pangram(s):
+#     pattern = r'[a-z]'
+#     s = s.lower()
+#     temp = []
+#     for item in s:
+#         if re.search(pattern, item):
+#             temp.append(item)
+#     temp = set(temp)
+#     temp = list(temp)
+#     sorted_chars = sorted(temp)
+#     sorted_str = ''.join(sorted_chars)
+#     if len(sorted_str) == 26: return True
+#     else: return False
+
+#print(is_pangram('The quick, brown fox jumps over the lazy dog!'))
+
+
+# def find_short(s):
+#     result = list(map(len, s.split()))
+#     return min(result)
+#
+#
+# print(find_short('bitcoin take over the world maybe who knows perhaps'))
+#
+
+def dublicate_encode(word: str) -> str:
+    result = ''
+    word = word.lower()
+    for i in range(len(list(word))):
+        if word.count(word[i]) == 1:
+            result += '('
+        else:
+            result += ')'
+    return result
+
+
+print(dublicate_encode('(( @'))
