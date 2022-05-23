@@ -91,15 +91,58 @@ import string
 # print(find_short('bitcoin take over the world maybe who knows perhaps'))
 #
 
-def dublicate_encode(word: str) -> str:
-    result = ''
-    word = word.lower()
-    for i in range(len(list(word))):
-        if word.count(word[i]) == 1:
-            result += '('
-        else:
-            result += ')'
-    return result
+# def dublicate_encode(word: str) -> str:
+#     result = ''
+#     word = word.lower()
+#     for i in range(len(list(word))):
+#         if word.count(word[i]) == 1:
+#             result += '('
+#         else:
+#             result += ')'
+#     return result
+#
+#
+# print(dublicate_encode('(( @'))
+
+# class Student:
+#     def __init__(self, name, fives, tens, twenties):
+#         self.name = name
+#         self.fives = fives
+#         self.tens = tens
+#         self.twenties = twenties
+#
+#
+# phil = Student("Phil", 2, 2, 1)
+# cam = Student("Cameron", 2, 2, 0)
+# geoff = Student("Geoff", 0, 3, 0)
+#
+#
+# def most_money(students):
+#     money = []
+#     for student in students:
+#         value = student.fives * 5 + student.tens * 10 + student.twenties * 20
+#         money.append(value)
+#     max_money = max(money)
+#     result = ''
+#     for i in range(len(students)):
+#         if max_money == students[i].fives * 5 + students[i].tens * 10 + students[i].twenties * 20:
+#             result = students[i].name
+#     if len(set(money)) == 1 and len(money) != 1:
+#         return 'all'
+#     else:
+#         return result
+#
+#
+# print(most_money([geoff]))
 
 
-print(dublicate_encode('(( @'))
+# def create_phone_number(n: list):
+#     result = '('
+#     result += str(n[0]) + str(n[1]) + str(n[2]) + ')' + ' ' + str(n[3]) + str(n[4]) + str(n[5]) + '-' + str(n[6]) + str(n[7]) + str(n[8]) + str(n[9])
+#     return result
+
+def create_phone_number(n):
+    return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+
+
+print(create_phone_number([1, 1, 1, 1, 2, 1, 1, 1, 1, 1]))
