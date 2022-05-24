@@ -61,14 +61,34 @@ persons= [
 # obj = Student("Adam Smith", 25, "Information Technology")
 # obj.access_private_method()
 
-class PizzaMaker:
-    def __make_pepperoni(self):
-        pass
+# class PizzaMaker:
+#     def __make_pepperoni(self):
+#         pass
+#
+#     def _make_barbecue(self):
+#         pass
+#
+#
+# maker = PizzaMaker()
+# maker._make_barbecue()
+# maker._PizzaMaker__make_pepperoni()
 
-    def _make_barbecue(self):
-        pass
+def tower_builder(n_floors: int) -> list:
+    tower = []
+    for i in range(n_floors):
+        tower.append([' '] * (2*n_floors - 1))
+    middle = int((2 * n_floors - 1) / 2)
+    for i in range(n_floors):
+        tower[i][middle] = '*'
+    for i in range(n_floors):
+        for j in range(n_floors - i - 1, n_floors + i):
+            tower[i][j] = '*'
+    result = []
+    for i in tower:
+        i = "".join(i)
+        result.append(i)
+    return result
 
 
-maker = PizzaMaker()
-maker._make_barbecue()
-maker._PizzaMaker__make_pepperoni()
+result = tower_builder(2)
+print(result)
