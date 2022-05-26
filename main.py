@@ -141,8 +141,18 @@ import string
 #     result += str(n[0]) + str(n[1]) + str(n[2]) + ')' + ' ' + str(n[3]) + str(n[4]) + str(n[5]) + '-' + str(n[6]) + str(n[7]) + str(n[8]) + str(n[9])
 #     return result
 
-def create_phone_number(n):
-    return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+# def create_phone_number(n):
+#     return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+#
+#
+# print(create_phone_number([1, 1, 1, 1, 2, 1, 1, 1, 1, 1]))
+
+def sum_of_differences(arr: list) -> int:
+    arr.sort(reverse=True)
+    result = 0
+    for i in range(len(arr) - 1):
+        result += (arr[i] - arr[i+1])
+    return result
 
 
-print(create_phone_number([1, 1, 1, 1, 2, 1, 1, 1, 1, 1]))
+print(sum_of_differences([1, 2, 10]))
