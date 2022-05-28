@@ -81,7 +81,7 @@ class Vector:
         for i in list(args):
             if isinstance(i, int):
                 values.append(i)
-        self.values = values
+        self.values = sorted(values)
 
     def __len__(self):
         return len(self.values)
@@ -99,10 +99,47 @@ class Vector:
         else:
             return 'Пустой вектор'
 
+    def __add__(self, other):
+        if isinstance(other, int):
+            b = list(map(lambda x: x + other, self.values))
+            return Vector(*b)
 
-v1 = Vector(1,2,3)
+        elif isinstance(other, Vector):
+            b = [x for x in range(len(other))]
+            if len(other) == len(self):
+                for i in range(len(other)):
+                    b[i] = self.values[i] + other.values[i]
+                return Vector(*b)
+            else:
+                print('Сложение векторов разной длины недопустимо')
+        else:
+            print(f'Вектор нельзя сложить со значением {other}')
+
+    def __mul__(self, other):
+        if isinstance(other, int):
+            b = list(map(lambda x: x * other, self.values))
+            return Vector(*b)
+        elif isinstance(other, Vector):
+            b = [x for x in range(len(other))]
+            if len(other) == len(self):
+                for i in range(len(other)):
+                  b[i] = self.values[i] * other.values[i]
+                return Vector(*b)
+            else:
+                print('Умножение векторов разной длины недопустимо')
+        else:
+            print(f'Вектор нельзя умножать с {other}')
+
+
+v1 = Vector(1, 2, 3)
 print(v1) # печатает "Вектор(1, 2, 3)"
-v2 = Vector()
-print(v2) # печатает "Пустой вектор"
-v3 = Vector([4,5], 'hello', 3, -1.5, 1, 2)
-print(v3)
+
+v2 = Vector(3, 4, 5)
+print(v2) # печатает "Вектор(3, 4, 5)"
+v3 = v1 + v2
+print(v3) # печатает "Вектор(4, 6, 8)"
+v4 = v3 + 5
+print(v4) # печатает "Вектор(9, 11, 13)"
+v5 = v1 * 2
+print(v5) # печатает "Вектор(2, 4, 6)"
+v5 + 'hi' # печатает "Вектор нельзя сложить с hi"
