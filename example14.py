@@ -28,21 +28,39 @@
 #
 # print(fact(5))
 
-class Addition:
-    def __init__(self):
-        pass
+# class Addition:
+#     def __init__(self):
+#         pass
+#
+#     def __call__(self, *args, **kwargs):
+#         lst = list(args)
+#         sum_result = 0
+#         for i in lst:
+#             if isinstance(i, (int, float)):
+#                 sum_result += i
+#         print(f'Сумма переданных значений = {sum_result}')
+#
+#
+# add = Addition()
+#
+# add(10, 20) # печатает "Сумма переданных значений = 30"
+# add(1, 2, 3.4) # печатает "Сумма переданных значений = 6.4"
+# add(1, 2, 'hello', [1, 2], 3) # печатает "Сумма переданных значений = 6"
 
-    def __call__(self, *args, **kwargs):
-        lst = list(args)
-        sum_result = 0
-        for i in lst:
-            if isinstance(i, (int, float)):
-                sum_result += i
-        print(f'Сумма переданных значений = {sum_result}')
+
+class Vehicle:
+    def __init__(self, name, max_speed, mileage):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+    def display_info(self):
+        print(f'Vehicle Name: {self.name}, Speed: {self.max_speed}, Mileage: {self.mileage}')
 
 
-add = Addition()
+class Bus(Vehicle):
+    pass
 
-add(10, 20) # печатает "Сумма переданных значений = 30"
-add(1, 2, 3.4) # печатает "Сумма переданных значений = 6.4"
-add(1, 2, 'hello', [1, 2], 3) # печатает "Сумма переданных значений = 6"
+
+bus_99 = Bus("Ikarus", 66, 124567)
+bus_99.display_info() #печатает "Vehicle Name: Ikarus, Speed: 66, Mileage: 124567"
