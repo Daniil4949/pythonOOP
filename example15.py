@@ -98,3 +98,4 @@ merc.display()
 
 polo = Taxi("Volkswagen Polo", 15000)
 polo.display()
+
