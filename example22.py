@@ -12,7 +12,7 @@ def binary_search(arr, low, high, x):
 
 
 arr = [4, 5, 6, 7, 8, 10]
-#print(binary_search(arr, 0, len(arr) - 1, 10))
+print(binary_search(arr, 0, len(arr) - 1, 10))
 
 
 def binary(arr, x):
