@@ -12,4 +12,22 @@ def binary_search(arr, low, high, x):
 
 
 arr = [4, 5, 6, 7, 8, 10]
-print(binary_search(arr, 0, len(arr) - 1, 10))
+#print(binary_search(arr, 0, len(arr) - 1, 10))
+
+
+def binary(arr, x):
+    mid = 0
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if x < arr[mid]:
+            high = mid - 1
+        elif x > arr[mid]:
+            low = mid + 1
+        else:
+            return mid
+    return -1
+
+
+print(binary(arr, 533))
