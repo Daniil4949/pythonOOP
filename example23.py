@@ -13,3 +13,11 @@ def bubbleSort(arr):
 arr = [9, 8, 6, 5, 3, 2, 1]
 bubbleSort(arr)
 print(arr)
+
+
+
+
+
+
+
+
