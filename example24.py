@@ -10,6 +10,5 @@ def sel_sort(array):
         array[m], array[i] = array[i], array[m]
 
 
-array = [9, 7, 6, 4, 33, 2]
-sel_sort(array)
-print(array)
+
+
