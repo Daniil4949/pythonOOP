@@ -45,7 +45,7 @@ class Cart:
         self.__total = 0
 
     def add(self, product: Product, amount=1):
-        if product in self.goods:
+        if product in self.goods.keys():
             self.goods[product.name] += amount
         else:
             self.goods[product.name] = amount
@@ -68,9 +68,12 @@ class Cart:
 
     def print_check(self):
         print('---Yor check---\n')
-        self.goods = sorted(self.goods)
+
+        self.goods = dict(self.goods)
+        keys = list(self.goods.keys())
+        values = list(self.goods.values())
         for i in range(len(self.goods)):
-            print(f'{self.goods[i]} {self.goods[i]} {self.goods[i]} ')
+            print(f'{keys[i]} {keys[i].price} {values[i]} {keys[i].price * values[i]} ')
             print()
         print(f'---Total: {self.total}---')
 
