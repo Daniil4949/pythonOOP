@@ -16,7 +16,6 @@ print(binary_search(arr, 0, len(arr) - 1, 10))
 
 
 def binary(arr, x):
-    mid = 0
     low = 0
     high = len(arr) - 1
     while low <= high:
@@ -30,4 +29,4 @@ def binary(arr, x):
     return -1
 
 
-print(binary(arr, 533))
+print(binary(arr, 4))
